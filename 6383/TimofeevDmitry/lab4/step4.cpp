@@ -37,29 +37,11 @@ void printResult(const vector<int>& res){
     for(int i=1;i<res.size();i++)cout<<','<<res[i];
 }
 
-int cyclicAnalisis(string &a, string &b){
-    if(a.size()!=b.size())return -1;
-    vector<int> aPref=prefix(a);
-    vector<int> bPref=prefix(b);
-
-    int ma=0;
-    int mb=0;
-    for(int i=0;i<a.size();i++){
-        const char cA=a[i];                         const char cB=b[i];
-        while(b[ma]!=cA&&ma!=0)ma=bPref[ma-1];      while(a[mb]!=cB&&mb!=0)mb=aPref[mb-1];
-        if(b[ma]==cA)ma++;                          if(a[mb]==cB)mb++;
-        if(ma+mb==a.size()||ma==a.size())return i-ma+1;
-    }
-
-    return -1;
-}
-
 int main() {
     string str;
     string key;
     cin>>key;
     cin>>str;
-    //cout<< cyclicAnalisis(key, str);
     printResult(kmp(str,key,prefix(key)));
     return 0;
 }
