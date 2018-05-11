@@ -67,7 +67,7 @@ void createSubPatterns(Node* root) {
     }
 }
 
-vector<int> findPatterns(string str, Node* root){
+vector<int> findPatterns(const string& str, Node* root){
     vector<int> res(str.size());
     Node* current=root;
     for(int i=0;i<str.size();i++){
@@ -107,7 +107,7 @@ Node* initBor(string str, char joker, int &count) {
     return bor;
 }
 
-vector<int> findWithJoker(string& txt, string& key, char joker){
+vector<int> findWithJoker(const string& txt, const string& key, char joker){
     int count;
     Node* bor= initBor(key, joker, count);
     createFails(bor);
@@ -115,7 +115,7 @@ vector<int> findWithJoker(string& txt, string& key, char joker){
     vector<int> found=findPatterns(txt,bor);
     Node::deleteBor(bor);
     vector<int> res;
-    for(int i=0;i<found.size();i++)if(found[i]==count)res.push_back(i);
+    for(int i=0;i<found.size();i++)if(found[i]==count&&i+key.size()<=txt.size())res.push_back(i);
     return res;
 }
 
