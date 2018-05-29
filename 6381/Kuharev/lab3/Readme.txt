@@ -1,0 +1,1 @@
+cmd:  g++ -std=c++11 3.cpp

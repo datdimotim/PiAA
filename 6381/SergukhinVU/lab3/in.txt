@@ -1,0 +1,16 @@
+13
+K
+T
+K L 5
+K O 15
+K Q 10
+O S 10
+L R 10
+L T 25
+N T 5
+N O 10
+S N 20
+S T 20
+S Q 20
+Q O 40
+R S 5

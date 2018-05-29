@@ -1,0 +1,8 @@
+KEYS=-Wall -Wextra
+
+all: Ford.exe
+	
+Ford.exe:
+	g++ Ford.o -g Ford.exe $(KEYS)
+Ford.o: Ford.cpp
+	g++ -c Ford.cpp -o Ford.o
