@@ -5,6 +5,7 @@
 #include <algorithm>
 #define MAXSIZE 6
 
+	
 // Реализация Бора
 struct Bohr_v 
 {
